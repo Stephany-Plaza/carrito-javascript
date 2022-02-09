@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <title>carrera1</title>
+</head>
+
+<body id="carreraBody">
+    <header>
+        <div class="menu">
+            <a href="../index.html"><img class="logo-img" src="../imagenes/logo-ultrabike.png" alt="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="carrito.html">Carrito de Compras</a></li>
+                    <li><a href="carreras.html">Carreras</a></li>
+                    <li><a href="contacto.html">Contactanos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>Carrera 1</h1>
+    <div id="ciclista">
+        <div class="ciclista1"><img src="../imagenes/carrera1-1.jpg" alt="ciclista"></div>
+    </div>
+    <form id="formulario">
+        <div class="formularioDivs">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div class="formularioDivs">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido">
+        </div>
+        <div class="formularioDivs">
+            <label for="cedula">Nro de Cedula:</label>
+            <input type="number" id="cedula" name="cedula">
+        </div>
+        <div class="formularioDivs">
+            <label for="categoria">Categoria:</label>
+            <input type="text" id="categoria" name="categoria">
+        </div>
+
+        <div class="formularioDivs">
+            <label for="sexo">Sexo :</label>
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="masculino" class="sexo" name="sexo" value="masc">
+            <label for="femenino">Femenino</label>
+            <input type="radio" id="femenino" class="sexo" name="sexo" value="fem">
+        </div>
+        <div class="formularioDivs">
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="user_mail">
+        </div>
+        <div class="formularioDivs">
+            <label for="pago">Selecciona el Metodo de Pago:</label>
+        </div>
+        <div class="formularioDivs">
+            <input type="checkbox" id="pagoMovil">
+            <label for="pagoMovil">Pago Movil</label>
+            <input type="checkbox" id="transferencia">
+            <label for="transferencia">Transferencia Bancaria</label>
+            <input type="checkbox" id="efectivo">
+            <label for="efectivo">Efectivo</label>
+        </div>
+        <div class="formularioDivs">
+            <input type="submit" id="boton">
+        </div>
+    </form>
+    <div id="subtitulo">
+        <h2>Personas Participando:</h2>
+    </div>
+    <table id="tabla" class="tablaCarrera">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cedula</th>
+            <th>Categoria</th>
+            <th>Sexo</th>
+            <th>Correo</th>
+        </tr>
+    </table>
+    <script type="module" src="../index.js"></script>
+
+</body>
+
+</html>
