@@ -1,5 +1,5 @@
 import { Registro } from "./utils.js";
-import { searchFilters } from "./utils.js";
+
 
 
 //Accediendo a todos los inputs y al formulario
@@ -9,7 +9,7 @@ const inputApellido = document.getElementById("apellido");
 const inputCedula = document.getElementById("cedula");
 const inputCategoria = document.getElementById("categoria");
 const inputCorreo = document.getElementById("correo");
-const inputSexo = document.getElementsByClassName("sexo");
+const inputSexo = document.getElementById("sexo");
 const tabla = document.getElementById("tabla");
 
 
@@ -37,6 +37,7 @@ const arreglo = [];
     localStorage.setItem("personas",jsonPersona);
     formulario.reset();
     }*/
+    
 function enviarInfo(e) {
     e.preventDefault();
     const nombre = inputNombre.value;
@@ -45,25 +46,54 @@ function enviarInfo(e) {
     const categoria = inputCategoria.value;
     const correo = inputCorreo.value;
     const sexo = inputSexo.value;
-    agregarFilas();
+   // agregarFilas();
+   
 
     const persona = new Registro(nombre, apellido, cedula, categoria, correo, sexo);
     arreglo.push(persona);
     const jsonPersona = JSON.stringify(arreglo);
     localStorage.setItem("personas", jsonPersona);
     formulario.reset();
+    
+    
+    arreglo.forEach(personas => {
+        const nuevaFila = tabla.insertRow(-1);
+
+
+    let nuevaCelda = nuevaFila.insertCell(0);
+    nuevaCelda.innerText = personas.nombre;
+
+    nuevaCelda = nuevaFila.insertCell(1);
+    nuevaCelda.innerText = personas.apellido;
+
+    nuevaCelda = nuevaFila.insertCell(2);
+    nuevaCelda.innerText = personas.cedula;
+
+    nuevaCelda = nuevaFila.insertCell(3);
+    nuevaCelda.innerText = personas.categoria;
+
+    nuevaCelda = nuevaFila.insertCell(4);
+    nuevaCelda.innerText = personas.sexo;
+
+    nuevaCelda = nuevaFila.insertCell(5);
+    nuevaCelda.innerText = personas.correo;
+    });
 }
 
-document.addEventListener("DOMContentLoaded",(guardar)=>{
+
+
+
+/*document.addEventListener("DOMContentLoaded",(guardar)=>{
     const localArray = JSON.parse(localStorage.getItem("personas"));
     localArray.forEach(element => {
         console.log(element)
     });
-})
+})*/
 
 
 
-function transactionObject(transactionFormData) {
+
+/*function transactionObject(transactionFormData) {
     let nombre = transactionFormData.get("nombre");
     let apellido = transactionFormData.get("apellido");
     let cedula = transactionFormData.get("cedula");
@@ -79,10 +109,10 @@ function transactionObject(transactionFormData) {
         "correo" : correo,
         "sexo" : sexo
     }
-}
+}*/
 
 //agregar filas-carreras 1 y 2
- function agregarFilas(arreglo) {
+ /*function agregarFilas(arreglo) {
 
     const nombre = inputNombre.value;
     const apellido = inputApellido.value;
@@ -110,8 +140,8 @@ function transactionObject(transactionFormData) {
 
     nuevaCelda = nuevaFila.insertCell(5);
     nuevaCelda.innerText = correo;
-    
 
-    }
+
+    }*/
 
     

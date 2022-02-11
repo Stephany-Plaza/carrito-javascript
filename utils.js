@@ -7,11 +7,9 @@ export class Registro{
         this.correo = correo;
         this.sexo = sexo;
     }
+    
 }
-//para el filtro
-export function searchFilters(input,selector){
-        
-}
+
 //para el carrito de compras
 export class Producto{
     constructor(id,nombre,precio,cantidad,stock){
