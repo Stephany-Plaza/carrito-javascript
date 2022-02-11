@@ -256,3 +256,6 @@ div#titulo{
 .filter{
     display: none;
 }
+#tabla-productos{
+    margin-top: 25px;
+}

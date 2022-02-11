@@ -1,18 +1,40 @@
 import { Producto } from "./utils.js";
 import { Carrito } from "./utils.js";
-
-//vamos a obtener los botones 
-const agregarAlCarrito = document.getElementById("carrito");
-
-//evento del click
+import { productos } from "./data.js";
 
 
+const carrito=new Carrito();
 
-agregarAlCarrito.addEventListener("click",()=>{
-    const description = document.getElementsByClassName=("descripcion");
-    const descripcion2 = document.innerHtml(description);
+ const renderList = (idLista, lista)=>{
+    const listaContainer= document.getElementById('lista-productos');
+     for(const item of lista){
+         const itemList = document.createElement('li');
+         itemList.innerHTML=(item.nombre);
+         listaContainer.appendChild (itemList);
+ 
+         itemList.addEventListener('click', ()=>{
+             console.log(`${item.nombre}`);
+             carrito.createItem(item);
+         })
+         itemList.onmouseover = ()=>{
+            itemList.style.backgroundColor = 'coral'
+     }
+     itemList.onmouseleave = ()=>{
+         itemList.style.backgroundColor = '#16689A';
+     }
+    }
+ }
+ renderList('lista-productos',productos);
 
-    const productoCreado = new Producto(1,descripcion2,5,6,true)
-    console.log(productoCreado)
-}
-)
+ const botonCompra = document.getElementById('boton-carrito-compra');
+
+ botonCompra.addEventListener('click',()=>{
+     alert(`usted ha comprado ${ JSON.stringify(carrito.findAllItems())}`);
+     
+ })
+ 
+
+
+
+
+
